@@ -175,3 +175,23 @@
 // }
 
 // console.log(result);
+
+
+// function getMathResult(num1, num2) {
+//     let res = num1;
+//     if (typeof(num2) !== 'number' || num2 <= 0) {
+//         console.log('Условие сработало!');
+//         return res;
+//     } else {
+//         for (let i = 1; i < num2; i++) {
+//             res += '---';
+//             res += (i + 1) * num1;
+//             console.log(`Значение res равно => ${res} `);
+//         }
+//         return res;
+//     }
+// }
+
+// console.log(getMathResult(3, 1));
+
+
