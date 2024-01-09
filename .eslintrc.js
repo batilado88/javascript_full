@@ -23,7 +23,7 @@ module.exports = {
     },
     'rules': {
         'indent': [
-            'warn',
+            'off',
             4
         ],
         'linebreak-style': [
