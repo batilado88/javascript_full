@@ -195,3 +195,67 @@
 // console.log(getMathResult(3, 1));
 
 
+
+
+// 1
+
+// function calculateVolumeAndArea(length) {
+//     let vol = length * length * length,
+//         sqr = 6 * length * length;
+        
+//     if (typeof(length) == 'number' && length > 0 && length % 1 == 0) {
+//         return `Объем куба: ${vol}, площадь всей поверхности: ${sqr}`;
+//     } else {
+//         return 'При вычислении произошла ошибка';
+//     }
+// }
+
+// console.log(calculateVolumeAndArea(5));
+// console.log(calculateVolumeAndArea('5'));
+// console.log(calculateVolumeAndArea(-1));
+// console.log(calculateVolumeAndArea(0));
+// console.log(calculateVolumeAndArea(0.1));
+
+
+
+
+// 2
+
+// function getCoupeNumber(seat) {
+    
+//     if (typeof(seat) !== 'number' || seat < 0 || seat % 1 !== 0) {
+//         return 'Ошибка. Проверьте правильность введенного номера места';
+    
+//     }   else if (seat == 0 || seat > 36) {
+//         return 'Таких мест в вагоне не существует';
+    
+//     }   else  {
+//         return Math.ceil(seat / 4);
+//     }
+// }
+
+// console.log(getCoupeNumber(0));
+// console.log(getCoupeNumber(37));
+// console.log(getCoupeNumber(5));
+// console.log(getCoupeNumber(15));
+// console.log(getCoupeNumber(36));
+
+
+
+
+// function checkNum(number) {
+//     if (number % 1 == 0) {
+//         console.log('целое');
+//     } else {
+//         console.log('не целое');
+//     }
+// }
+
+// checkNum(5);
+// checkNum(7);
+// checkNum(10);
+// checkNum(0);
+// checkNum(5.5);
+
+
+// console.log(6 % 1);
