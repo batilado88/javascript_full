@@ -531,28 +531,126 @@
 // console.log(isBudgetEnough(shoppingMallData));
 
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Obama', 'Baiden'];
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Obama', 'Baiden'];
 
-function sortStudentsByGroups(arr) {
-    arr.sort();
-    let a = [],
-        b = [],
-        c = [],
-        rest = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (i < 3) {
-            a.push(arr[i]);
-        } else if (i < 6) {
-            b.push(arr[i]);
-        } else if (i < 9) {
-            c.push(arr[i]);
-        } else  {
-            rest.push(arr[i]);
-        } 
-    }
+// function sortStudentsByGroups(arr) {
+//     arr.sort();
+//     let a = [],
+//         b = [],
+//         c = [],
+//         rest = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i < 3) {
+//             a.push(arr[i]);
+//         } else if (i < 6) {
+//             b.push(arr[i]);
+//         } else if (i < 9) {
+//             c.push(arr[i]);
+//         } else  {
+//             rest.push(arr[i]);
+//         } 
+//     }
 
-    return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
+//     return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
 
-}
+// }
 
-console.log(sortStudentsByGroups(students));
+// console.log(sortStudentsByGroups(students));
+
+
+// console.log(typeof(parseInt('15px', 10)));
+// console.log(parseInt('15px', 10));
+
+// console.log(typeof(Boolean('4')));
+// console.log(Boolean('null'));
+
+// console.log(Number('null'));
+
+// console.log(typeof(!!'44444'));
+// console.log(!!+'dd');
+
+// let arr = [0, 1, 2, 3, 4, 5];
+// arr.join(' '));
+
+
+// function createCounter() {
+//     let counter = 0;
+
+//     const myFunction = function() {
+//         counter = counter + 1;
+//         return counter;
+//     };
+
+//     return myFunction;
+// }
+
+// const increment = createCounter();
+// const c1 = increment();debugger;
+// const c2 = increment();debugger;
+// const c3 = increment();debugger;
+
+// console.log(c1, c2, c3);
+
+
+
+// function createCounter() {
+//     // let counter = 0;
+//     const myFunction = function() {
+//         counter = counter + 1;
+//         return counter;
+//     };
+//     // counter = 100;
+//     return myFunction;
+//     }
+//     const increment = createCounter();
+//     // counter = 5;
+//     let counter = 100;
+//     const c1 = increment();
+//     const c2 = increment();
+//     counter = 777;
+//     const c3 = increment();
+//     console.log('example increment', c1, c2, c3);
+
+// let a = 10;
+
+// let b = 30;
+// c = 50;
+
+// console.log(a + b + c);
+
+
+// let x = 1;
+
+// function func() {
+//   console.log(x); // ?
+
+//   let x = 2;
+// }
+
+// func();
+
+
+// function makeArmy() {
+//     let shooters = [];
+  
+//    for (let i = 0; i < 10; i++) {
+//       let shooter = function() { // функция shooter
+//         console.log( i ); // должна выводить порядковый номер
+//       };
+//       shooters.push(shooter); // и добавлять стрелка в массив
+//     }
+  
+//     // ...а в конце вернуть массив из всех стрелков
+//     return shooters;
+//   }
+  
+//   let army = makeArmy();
+  
+//   // все стрелки выводят 10 вместо их порядковых номеров (0, 1, 2, 3...)
+//   army[0](); // 10 от стрелка с порядковым номером 0
+//   army[1](); // 10 от стрелка с порядковым номером 1
+//   army[2](); // 10 ...и т.д.
+
+
+
+// console.log('b' > 'a');

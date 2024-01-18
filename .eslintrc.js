@@ -40,6 +40,9 @@ module.exports = {
         ],
         'no-unused-vars': [
             'off'
-        ]
+        ],
+        'no-debugger': [    // правило, разрешающее использовать debugger
+            'off'
+        ]  
     }
 };    
