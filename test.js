@@ -654,3 +654,268 @@
 
 
 // console.log('b' > 'a');
+
+
+
+/*
+// 	Какое будет выведено значение: let x = 5; alert( x++ ); ?
+// 	Чему равно такое выражение: [ ] + false - null + true ?
+// 	Что выведет этот код: let y = 1; let x = y = 2; alert(x); ?
+// 	Чему равна сумма [ ] + 1 + 2?
+// 	Что выведет этот код: alert( "1"[0] )?
+// 	Чему равно 2 && 1 && null && 0 && undefined ?
+// 	Есть ли разница между выражениями? !!( a && b ) и (a && b)?
+// 	Что выведет этот код: alert( null || 2 && 3 || 4 ); ?
+// 	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?
+// 	Что выведет этот код: alert( +"Infinity" ); ?
+// 	Верно ли сравнение: "Ёжик" > "яблоко"?
+// 	Чему равно 0 || "" || 2 || undefined || true || falsе ?
+*/
+
+// let x = 5; 
+// console.log( x++ );
+
+// console.log( [ ] - null );
+
+// let y = 1; 
+// let x = y = 2; 
+// console.log(x);
+
+// 	Чему равна сумма [ ] + 1 + 2?
+// console.log( typeof([ ] + 1 + 2) );
+
+// console.log( [] + 1 + 23 );
+
+// 	Что выведет этот код: alert( "1"[0] )?
+// console.log( '1'     [23] );
+
+// 	Чему равно 2 && 1 && null && 0 && undefined ?
+// console.log( 2 && 1 && null && 0 && undefined );
+
+// 	Есть ли разница между выражениями? !!( a && b ) и (a && b)?
+// let a = 1,
+//     b = 22;
+// // console.log ( !!( a && b ) );
+// // console.log ( (a && b) );
+// console.log ( !!( a && b ) === ( b > a));
+
+
+
+
+// 	Что выведет этот код: alert( null || 2 && 3 || 4 ); ?
+// console.log( null || 2 && 3 || 4 );
+// console.log( null || 2 && 0 || 4 );
+
+// 	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?
+
+// let a = [1, 2, 3],
+//     b = [1, 2, 3];
+
+// console.log(a === b);
+// 	Что выведет этот код: alert( +"Infinity" ); ?
+// console.log( +'Infinity ');
+// console.log( typeof(+'Infinity') );
+// console.log( +'43' );
+
+// 	Верно ли сравнение: "Ёжик" > "яблоко"?
+
+// console.log("ёжик" > "Яблоко");
+// console.log('Ёжик' > 'я1Aaa');
+// console.log('Баба' < 'баба');
+// console.log('baba' < 'Ёaba');
+
+// 	Чему равно 0 || "" || 2 || undefined || true || falsе ?
+// console.log(  0 || "" || 2 || undefined || true || false );
+
+
+
+
+// const restorantData = {
+//     menu: [
+//         {
+//             name: 'Salad Caesar',
+//             price: '14$'
+//         },
+//         {
+//             name: 'Pizza Diavola',
+//             price: '9$'
+//         },
+//         {
+//             name: 'Beefsteak',
+//             price: '17$'
+//         },
+//         {
+//             name: 'Napoleon',
+//             price: '7$'
+//         }
+//     ],
+//     waitors: [
+//         {name: 'Alice', age: 22}, {name: 'John', age: 24}
+//     ],
+//     averageLunchPrice: '20$',
+//     openNow: true
+// };
+
+// console.log(restorantData.menu[0]['price'].slice(0, -1));
+// console.log(restorantData.averageLunchPrice);
+// console.log(typeof(+restorantData.menu[0].price.slice(0, -1)));
+
+
+// function isOpen(prop) {
+//     let answer = '';
+//     prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+//     return answer;
+// }
+
+// console.log(isOpen(restorantData.openNow));
+
+
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//     if (+fDish.price.slice(0, -1) + +sDish.price.slice(0, -1) < +average.slice(0, -1)) {
+//         return 'Цена ниже средней';
+//     } else {
+//         return 'Цена выше средней';
+//     }
+// }
+
+// console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+
+
+// function transferWaitors(data) {
+//     const copy = {... data};
+
+//     copy.waitors = [... data.waitors];
+//     copy.waitors[0] = {name: 'Mike', age: 32};
+//     return copy;
+// }
+
+// console.log(transferWaitors(restorantData));
+// console.log(restorantData);
+
+
+
+
+// function transferWaitors(data) {
+//     const copy = Object.assign({}, data);
+//     copy.waitors = Object.assign([], data.waitors);
+//     // copy.waitors = [...data.waitors];
+//     copy.waitors[0] = {name: 'Mike', age: 32};
+//     return copy;
+// }
+
+// console.log(transferWaitors(restorantData));
+// console.log(restorantData);
+
+
+
+// let aa = {
+//     a: 1,
+//     b: 2,
+//     c: 3
+// };
+
+// let bb = {... aa};
+
+// bb.b = 777;
+// console.log(aa);
+// console.log(bb);
+
+
+
+// function pow(x, n) {
+//     if (n === 1) {
+//         return x;
+//     } else {
+//         console.log(`Текущее значение ${n}`);
+//         return x * pow(x, n - 1);
+//     }
+// }
+
+// console.log(pow(2, 1));
+// console.log(pow(2, 2));
+// console.log(pow(2, 3));
+// console.log(pow(2, 4));
+// console.log(pow(2, 5));
+
+
+
+// function factorial(num) {
+
+//     if (!Number.isInteger(num)) {
+//         return 'Произошла ошибка - ввёденое значение не является целым числом';
+//     } else if (num <= 0) {
+//         return 1;
+//     } else {
+//         return num * factorial(num - 1);
+//     }
+// }
+
+// //     if (num === 1) {
+// //         return num;
+// //     }
+// //     return num * factorial(num - 1);
+// // }
+
+// console.log(factorial(0));
+// console.log(factorial(1));
+// console.log(factorial(2));
+// console.log(factorial(3));
+// console.log(factorial(4));
+// console.log(factorial(5));
+// console.log(factorial(10));
+// console.log(factorial(5.5));
+// console.log(factorial(-5.5));
+// console.log(factorial('Число'));
+// console.log(factorial(-5));
+
+
+
+
+
+// let someArr = ['bicycle', 'jarmony', 'flick', 'sheep', 'flick'];
+
+// function flickSwitch(arr){
+//     let result = [],
+//         toggle = true;
+//     arr.forEach(elem => {
+//       if (elem === 'flick') {
+//         if (toggle) {
+//             toggle = false;
+//         } else {
+//             toggle = true;
+//         }
+//         result.push(toggle);
+//       } else {
+//         result.push(toggle);
+//       }
+//     });
+//     return result;
+//   }
+
+//   console.log(flickSwitch(someArr));
+
+
+
+
+
+function amountOfPages(summary){
+  let a;
+  let b;
+  let c;
+  for (let i = 1; i <= summary; i++) {
+    a.push(i);
+    b = a.join('');
+    if (b.length == summary) {
+      c = i;
+      break;
+    }
+  }
+  return c;
+  
+} 
+
+console.log(amountOfPages(25));
+
+console.log(amountOfPages(5));
