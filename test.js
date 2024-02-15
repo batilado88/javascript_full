@@ -900,22 +900,106 @@
 
 
 
-function amountOfPages(summary){
-  let a;
-  let b;
-  let c;
-  for (let i = 1; i <= summary; i++) {
-    a.push(i);
-    b = a.join('');
-    if (b.length == summary) {
-      c = i;
-      break;
-    }
-  }
-  return c;
+// function amountOfPages(summary){
+
+//   let a = [];
+//   let b;
+//   let c;
+//   for (let i = 1; i <= summary; i++) {
+//     a.push(i);
+//     b = a.join('');
+//     if (b.length >= summary) {
+//       c = i;
+//       break;
+//     }
+//   }
+//   return c;
   
-} 
+// } 
 
-console.log(amountOfPages(25));
 
-console.log(amountOfPages(5));
+// console.log(amountOfPages(4));
+// console.log(amountOfPages(12));
+// console.log(amountOfPages(14));
+// console.log(amountOfPages(8));
+// console.log(amountOfPages(25));
+// console.log(amountOfPages(5));
+// console.log(amountOfPages(10));
+// console.log(amountOfPages(999));
+
+
+
+
+
+// function isPangram(string) {
+//     let arr = [];
+//     let set = new Set(string.toLowerCase());
+
+//     set.delete(' ');
+
+//     // if (set.size == 26) {
+//     //     return true;
+//     // } else {
+//     //     return false;
+//     // }
+
+//     return (set.size == 26);
+// }
+
+// console.log(isPangram('ZlOy Sobaken'));
+// console.log(isPangram('The quick brown fox jumps over the lazy dog'));
+
+
+
+
+
+
+
+// Свой вариант
+
+// function deepCount(a) {
+
+//     let i = 0;
+//     foo(a);
+
+//     function foo(a) {
+
+//         if (a.length === 0) {
+//             return 0;
+//         }
+
+//         a.forEach(e => {
+        
+//             if (Array.isArray(e)) {
+//                 i++;
+//                 return foo(e);
+//             } else {
+//             i++;
+//             }
+//         });
+//     }
+
+//     return i;
+// }
+
+// Вариант, подсмотренный после успешного прохождения:
+
+
+function deepCount(a) {
+    let sum = a.length;
+    a.forEach(e => {
+        if (Array.isArray(e)) {
+            sum += deepCount(e);
+        }
+    });
+    return sum;
+}
+
+
+
+
+console.log(deepCount([[[[[[[[[]]]]]]]]])); // => 8
+console.log(deepCount([1, 5, 3])); // => 3
+console.log(deepCount(['1', 5, '3', ['10']])); // => 5 (Заметьте, что последний элемент был посчитан сам + его внутренность)
+console.log(deepCount([1, 2, [3, 4, [5]]])); // => 7
+console.log(deepCount([])); // => 0
