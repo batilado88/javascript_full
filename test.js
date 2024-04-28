@@ -1003,3 +1003,6 @@ console.log(deepCount([1, 5, 3])); // => 3
 console.log(deepCount(['1', 5, '3', ['10']])); // => 5 (Заметьте, что последний элемент был посчитан сам + его внутренность)
 console.log(deepCount([1, 2, [3, 4, [5]]])); // => 7
 console.log(deepCount([])); // => 0
+
+
+console.log(50/10);
