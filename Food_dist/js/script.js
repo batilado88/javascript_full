@@ -43,8 +43,6 @@ tabsParent.addEventListener('click', (event) => {
 
     });
 });
-// the end
-});
 
 
 // Timer
@@ -78,7 +76,8 @@ function setTimer(selector, endtime) {
         minutes = timer.querySelector('#minutes'),
         seconds = timer.querySelector('#seconds'),
         timeInterval = setInterval(updateTimer, 1000);
-        updateTimer();
+
+    updateTimer();
     
         function updateTimer() {
             let t = timeRemaining(endtime);
@@ -94,73 +93,68 @@ function setTimer(selector, endtime) {
         }
 }
 
-
-// console.log(timeRemaining(deadline));
-
 setTimer('.timer', deadline);
 
 
 
+// Modal window
+
+const modalWindow = document.querySelector('.modal'),
+      modalBtn = document.querySelectorAll('[data-modal]'),
+      modalCloseBtn = document.querySelector('.modal__close');
+
+
+// console.log(modalBtn);
+
+function openModal() {
+    modalWindow.classList.add('show');
+    modalWindow.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+
+    clearTimeout(modalTimer);
+}
+
+modalBtn.forEach((item) => {
+    // console.log(item);
+    item.addEventListener('click', openModal);
+});
+
+function closeModal() {
+    modalWindow.classList.add('hide');
+    modalWindow.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+modalCloseBtn.addEventListener('click', closeModal);
+
+modalWindow.addEventListener('click', (e) => {
+    if (e.target === modalWindow) {
+        closeModal();
+    }
+    // console.dir(e.target);
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape' && modalWindow.classList.contains('show')) {
+        closeModal();
+        // console.log(111);
+    }
+});
+
+
+let modalTimer = setTimeout(openModal, 15000);
+
+function openModalByScroll() {
+    if (window.scrollY + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+        openModal();
+        window.removeEventListener('scroll', openModalByScroll);
+    }
+}
+
+window.addEventListener('scroll', openModalByScroll);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// X3 зачем это то что дальше, внизу..
-
-
-// window.addEventListener('DOMContentLoaded', () => {
-
-// const tabs = document.querySelectorAll('.tabheader__item'),
-//       tabContent = document.querySelectorAll('.tabcontent'),
-//       tabHeader = document.querySelector('.tabheader__items');
-
-
-// function hideTab() {
-//     tabContent.forEach((item) => {
-//         // item.style.cssText = 'display: none';
-//         item.classList.remove('show');
-//         item.classList.add('hide');
-//     }
-// );}
-
-// function showTab(i = 0) {
-//     tabContent[i].classList.remove('hide');
-//     tabContent[i].classList.add('show');
-//     // tabContent[i].style.cssText = 'display: block';
-// }
-
-// hideTab();
-// showTab(0);
-
-// tabHeader.addEventListener('click', event => {
-//     // console.log('1');
-//     let target = event.target;
-//     // console.log(tabHeader);
-
-//     tabs.forEach((item, i) => {
-//     item.classList.remove('tabheader__item_active');
-//         if (target && target.textContent == item.textContent) {
-            
-//             item.classList.add('tabheader__item_active');
-//             hideTab();
-//             showTab(i);
-//         }
-//     });
-// });
-
-
-// });
+// the end
+});
