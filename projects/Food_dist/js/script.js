@@ -230,6 +230,74 @@ new MenuCard(
 ).render();
 
 
+// Forms
+
+const forms = document.querySelectorAll('form');
+
+const message = {
+    loading: 'Идёт отправка формы',
+    success: 'Запрос получен - скоро перезвоним!',
+    failure: 'Произошла какая-то ошибка'
+};
+
+
+forms.forEach((item) => {
+    postData(item);
+});
+
+function postData(form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let statusMessage = document.createElement('div');
+        // statusMessage.classList.add('status');
+        statusMessage.textContent = message.loading;
+        form.appendChild(statusMessage);
+
+    
+// 1-й вариант
+        // const request = new XMLHttpRequest();
+        // request.open('POST', 'server.php');
+        // const formData = new FormData(form);
+        // request.send(formData);
+// конец 1-го вариант
+
+// 2-й вариант       
+        const request = new XMLHttpRequest();
+        request.open('POST', 'server.php');
+        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        const formData = new FormData(form);
+        
+        let obj = {};
+        formData.forEach((value, key) => {
+            obj[key] = value;
+        });
+
+        let json = JSON.stringify(obj);
+        request.send(json); 
+// конец 2-го вариант
+
+
+        request.addEventListener('load', () => {
+
+            if (request.status === 200) {
+                console.log(request.response);
+                statusMessage.textContent = message.success;
+                form.reset();
+                setTimeout(() => {
+                    statusMessage.remove();
+                }, 5000);
+            } else {
+                statusMessage.textContent = message.failure;
+            }
+        });
+
+    });
+}
+
+
+
+
 
 
 // the end
